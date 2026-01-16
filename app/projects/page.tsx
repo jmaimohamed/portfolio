@@ -22,6 +22,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { projects } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 import TechBackground from "@/components/TechBackground"
 
 const categoryConfig: Record<string, { icon: typeof Cpu; color: string; bg: string; gradient: string }> = {
@@ -193,7 +194,7 @@ export default function ProjectsPage() {
                     <div className="overflow-hidden h-48 bg-gradient-to-br from-card to-card/50 relative">
                       {project.images && project.images.length > 0 ? (
                         <img
-                          src={project.images[0]}
+                          src={getAssetPath(project.images[0])}
                           alt={project.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
@@ -282,7 +283,7 @@ export default function ProjectsPage() {
                       <div className="flex gap-4">
                         <div className="w-32 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-card">
                           {project.images && project.images.length > 0 ? (
-                            <img src={project.images[0]} alt={project.title} className="w-full h-full object-cover" />
+                            <img src={getAssetPath(project.images[0])} alt={project.title} className="w-full h-full object-cover" />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center">
                               <CatIcon className={`w-8 h-8 ${catConfig.color} opacity-30`} />

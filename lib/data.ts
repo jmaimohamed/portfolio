@@ -119,9 +119,9 @@ export const projects: Project[] = [
 
     The system features real-time vehicle tracking & sensor monitoring, a safety system using OpenCV for drowsiness detection, and IoT devices integrated with ESP32 and Raspberry Pi. Built with a distributed architecture using containerized services, including a web dashboard in React.js, backend in Spring Boot, and mobile app via React Native. The full CI/CD and monitoring stack includes Docker, Jenkins, Prometheus, and Grafana.`,
     category: "iot",
-    thumbnail: "/Project/Truck Monitoring System (T.M.S)/certificat.pdf",
-    images: ["/Project/Truck Monitoring System (T.M.S)/certificat.pdf"],
-    videoUrl: "/Project/Truck Monitoring System (T.M.S)/video.mp4",
+    thumbnail: "/Project/TMS/certificat.pdf",
+    images: ["/Project/TMS/certificat.pdf"],
+    videoUrl: "/Project/TMS/video.mp4",
     tags: ["Spring Boot", "React.js", "React Native", "Docker", "Jenkins", "Grafana", "Prometheus", "Raspberry Pi", "ESP32", "Azure", "OpenCV"],
     features: [
       "Real-time vehicle tracking & sensor monitoring",
