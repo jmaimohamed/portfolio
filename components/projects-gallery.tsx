@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github, Zap, Cpu, Globe, Smartphone, ArrowRight, Layers } from "lucide-react"
 import Link from "next/link"
 import { projects } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 
 const categoryConfig: Record<string, { icon: typeof Cpu; color: string; bg: string }> = {
   embedded: { icon: Cpu, color: "text-cyan-500", bg: "bg-cyan-500/10" },
@@ -114,7 +115,7 @@ export function ProjectsGallery() {
                 <div className="overflow-hidden h-48 bg-gradient-to-br from-card to-card/50 relative">
                   {project.images && project.images.length > 0 ? (
                     <img
-                      src={project.images[0]}
+                      src={getAssetPath(project.images[0])}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />

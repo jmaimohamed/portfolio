@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, Code2, Home, User, Briefcase, Mail, Cpu, FileText, BookOpen } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn, getAssetPath } from "@/lib/utils"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -48,7 +48,7 @@ export function Navigation() {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="justify-center transition-transform duration-300 group-hover:scale-105">
                 <Image 
-                  src="/logo (2).png" 
+                  src={getAssetPath("/logo (2).png")}
                   alt="JM Logo" 
                   width={48} 
                   height={48} 
@@ -61,7 +61,7 @@ export function Navigation() {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-1 bg-background/40 p-1.5 rounded-full border border-white/5 backdrop-blur-sm">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   className="relative px-4 py-2 rounded-full text-sm font-medium text-foreground/80 hover:text-foreground transition-all group overflow-hidden hover:bg-background/50"
@@ -69,7 +69,7 @@ export function Navigation() {
                   <span className="relative z-10 flex items-center gap-2">
                     {item.label}
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -89,7 +89,7 @@ export function Navigation() {
           <div className="md:hidden absolute top-full left-0 right-0 mt-2 p-2 mx-2">
              <div className="rounded-2xl bg-background/95 backdrop-blur-xl border border-border/50 shadow-xl p-2 flex flex-col gap-1 overflow-hidden animate-in slide-in-from-top-2 fade-in duration-200">
                {navItems.map((item) => (
-                 <a
+                 <Link
                    key={item.href}
                    href={item.href}
                    onClick={() => setIsOpen(false)}
@@ -99,7 +99,7 @@ export function Navigation() {
                      <item.icon size={20} />
                    </div>
                    <span className="font-medium text-foreground/90 group-hover:text-foreground">{item.label}</span>
-                 </a>
+                 </Link>
                ))}
              </div>
           </div>

@@ -24,6 +24,7 @@ import {
   ChevronRight
 } from "lucide-react"
 import { projects } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 import { useState, useEffect } from "react"
 import TechBackground from "@/components/TechBackground"
 
@@ -59,7 +60,7 @@ function ImageGallery({
     <div className="relative">
       <div className="aspect-video bg-card relative overflow-hidden">
         <img 
-          src={images[activeIndex] || "/placeholder.svg"} 
+          src={getAssetPath(images[activeIndex]) || getAssetPath("/placeholder.svg")}
           alt={`Project image ${activeIndex + 1}`}
           className="w-full h-full object-cover"
         />
@@ -90,7 +91,7 @@ function ImageGallery({
                 idx === activeIndex ? "border-secondary" : "border-transparent opacity-60 hover:opacity-100"
               }`}
             >
-              <img src={img || "/placeholder.svg"} alt="" className="w-full h-full object-cover" />
+              <img src={getAssetPath(img) || getAssetPath("/placeholder.svg")} alt="" className="w-full h-full object-cover" />
             </button>
           ))}
         </div>
