@@ -203,7 +203,13 @@ export default function ProjectDetailClient({ id }: { id: string }) {
                       </TabsList>
                       <TabsContent value="video" className="mt-0">
                         <div className="aspect-video">
-                          <iframe src={project.videoUrl} className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                          {project.videoUrl.includes('youtube') || project.videoUrl.includes('vimeo') ? (
+                            <iframe src={project.videoUrl} className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                          ) : (
+                            <video src={getAssetPath(project.videoUrl)} className="w-full h-full" controls playsInline>
+                              Your browser does not support the video tag.
+                            </video>
+                          )}
                         </div>
                       </TabsContent>
                       <TabsContent value="images" className="mt-0">
@@ -347,7 +353,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
               <Link key={p.id} href={`/projects/${p.id}`}>
                 <Card className="border-2 border-secondary/20 hover:border-secondary transition-all cursor-pointer group overflow-hidden h-full">
                   <div className="aspect-video bg-card overflow-hidden">
-                    <img src={p.thumbnail || "/placeholder.svg"} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src={getAssetPath(p.thumbnail) || getAssetPath("/placeholder.svg")} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <CardHeader>
                     <Badge className={`w-fit bg-gradient-to-r ${categoryColors[p.category]} text-white border-0 text-xs`}>{p.category}</Badge>
