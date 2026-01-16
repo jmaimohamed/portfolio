@@ -2,7 +2,6 @@ import { Github, Linkedin, Twitter, Mail, Cpu, Heart, Code2 } from "lucide-react
 import Link from "next/link"
 import Image from "next/image"
 import { personalInfo } from "@/lib/data"
-import { getAssetPath } from "@/lib/utils"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -34,7 +33,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image 
-                src={getAssetPath("/logo (2).png")}
+                src="/logo (2).png"
                 alt="JM Logo" 
                 width={40} 
                 height={40} 

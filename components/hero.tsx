@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Github, Linkedin, Mail, Cpu, Code2, Smartphone, ChevronDown, Sparkles, Terminal, Zap } from "lucide-react"
 import TechBackground from "./TechBackground"
 import { personalInfo } from "@/lib/data"
-import { getAssetPath } from "@/lib/utils"
 
 export function Hero() {
   const [isMounted, setIsMounted] = useState(false)
@@ -219,7 +218,7 @@ export function Hero() {
               <div className="relative rounded-3xl border border-border/50 bg-card/30 backdrop-blur-sm p-6">
                 <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-cyan-500/20">
                   <Image
-                    src={getAssetPath(personalInfo.photo)}
+                    src={personalInfo.photo}
                     alt={`${personalInfo.name} profile photo`}
                     fill
                     priority

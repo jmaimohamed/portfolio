@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, Code2, Home, User, Briefcase, Mail, Cpu, FileText, BookOpen } from "lucide-react"
-import { cn, getAssetPath } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -48,7 +48,7 @@ export function Navigation() {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="justify-center transition-transform duration-300 group-hover:scale-105">
                 <Image 
-                  src={getAssetPath("/logo (2).png")}
+                  src="/logo (2).png"
                   alt="JM Logo" 
                   width={48} 
                   height={48} 
