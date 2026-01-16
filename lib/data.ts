@@ -121,7 +121,7 @@ export const projects: Project[] = [
     category: "iot",
     thumbnail: "/Project/Truck Monitoring System (T.M.S)/certificat.pdf",
     images: ["/Project/Truck Monitoring System (T.M.S)/certificat.pdf"],
-    videoUrl: "/Project/Truck Monitoring System (T.M.S)/Video Com(1).mp4",
+    videoUrl: "/Project/Truck Monitoring System (T.M.S)/video.mp4",
     tags: ["Spring Boot", "React.js", "React Native", "Docker", "Jenkins", "Grafana", "Prometheus", "Raspberry Pi", "ESP32", "Azure", "OpenCV"],
     features: [
       "Real-time vehicle tracking & sensor monitoring",
