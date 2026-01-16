@@ -112,6 +112,63 @@ export const projects: Project[] = [
     status: "maintained"
   },
   {
+    id: "autonomous-ai-robot",
+    title: "Autonomous Mobile Robot with Embedded AI & SLAM",
+    shortDescription: "ROS 2 powered autonomous robot with real-time SLAM mapping, Nav2 navigation, and YOLOv8 AI object detection for intelligent navigation",
+    longDescription: `Designed and simulated a differential drive mobile robot capable of Autonomous Navigation, Real-Time Mapping (SLAM), and AI-Powered Object Detection. Built on ROS 2 Humble with modular architecture ready for deployment on physical hardware (Raspberry Pi/Jetson Nano).
+
+    The robot features a custom URDF/Xacro model with differential drive kinematics, integrated LIDAR for 360-degree scanning, and a camera for AI processing. The Nav2 stack handles path planning with SmacPlanner (A*) and DWB Controller for dynamic obstacle avoidance.
+
+    Real-time SLAM is implemented using slam_toolbox in async mode, generating 2D Occupancy Grid Maps while exploring unknown environments. The AI perception system uses YOLOv8 Nano for edge-optimized object detection, capable of detecting 80+ classes in real-time.
+
+    A mission control node enables autonomous waypoint patrol with reactive AI behavior - the robot stops when detecting specific objects like humans. The project follows professional ROS 2 standards with 5 decoupled packages: robot_description, robot_gazebo, robot_navigation, robot_perception, and robot_behavior.`,
+    category: "embedded",
+    thumbnail: "/Project/Autonomous-AI-Robot/gazebo.png",
+    images: [
+      "/Project/Autonomous-AI-Robot/gazebo.png",
+      "/Project/Autonomous-AI-Robot/rviz.png"
+    ],
+    tags: ["ROS 2", "Python", "C++", "Gazebo", "SLAM", "Nav2", "YOLOv8", "OpenCV", "URDF", "TensorFlow"],
+    features: [
+      "Custom Robot Design with URDF/Xacro and Differential Drive kinematics",
+      "360° LIDAR sensor and Camera for AI processing",
+      "Autonomous Navigation with Nav2 (SmacPlanner + DWB Controller)",
+      "Real-Time SLAM with slam_toolbox (Async Online Mapping)",
+      "YOLOv8 Nano AI detection (80+ classes, <100ms inference)",
+      "Global & Local Costmaps with inflation layers",
+      "Mission Control Node with waypoint patrol",
+      "Reactive AI: Emergency stop on human detection"
+    ],
+    technologies: [
+      { name: "ROS 2 Humble" },
+      { name: "Python", version: "3" },
+      { name: "C++" },
+      { name: "Gazebo Classic" },
+      { name: "RViz2" },
+      { name: "Nav2" },
+      { name: "SLAM Toolbox" },
+      { name: "YOLOv8" },
+      { name: "OpenCV" },
+      { name: "URDF/Xacro" },
+      { name: "Colcon" }
+    ],
+    challenges: [
+      "Solving TF transform tree synchronization between odom → base_link → laser_frame",
+      "Optimizing YOLOv8 for edge devices while maintaining accuracy",
+      "Configuring Nav2 costmaps for dynamic obstacle avoidance"
+    ],
+    solutions: [
+      "Careful TF2 configuration and frame relationship debugging",
+      "Used YOLOv8 Nano model optimized for Jetson/Raspberry Pi",
+      "Tuned inflation layers and DWB parameters for smooth navigation"
+    ],
+    githubUrl: "https://github.com/jmaimohamed/Autonomous-AI-Robot",
+    date: "2026",
+    duration: "2 months",
+    role: "Robotics Software Engineer",
+    status: "completed"
+  },
+  {
     id: "truck-monitoring-system",
     title: "Truck Monitoring System (T.M.S)",
     shortDescription: "IoT-powered platform for logistics operations with vehicle monitoring, real-time telemetry, and safety analytics",
